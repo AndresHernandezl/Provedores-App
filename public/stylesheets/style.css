@@ -546,16 +546,42 @@ body {
     color: #8190A1;
     display: block;;
 }
-.Productos-Cantidad{
-
-}
 .Productos-Precio{
     font-size: 20px;
     color: #54B551;
     font-weight: 500;
     text-align: right;
 }
+.explore-all-btn{
+    background: #4985B8 none repeat scroll 0% 0%;
+    display: block;
+    font-size: 28px;
+    text-align: center;
+    color: #FFF;
+    padding: 20px;
+    font-weight: 700;
+}
+.More{
+    padding: 0px 0 40px 0;
+    text-align: center;
+}
+.More-question{
+    margin: 0px;
+    font-size: 48px;
+}
+.More-exclamet{
+    margin: 10px 0px 0px;
+    font-size: 24px;
+}
+.signup-btn {
+    padding: 16px 52px;
+    font-size: 20px;
+}
+/* <<<--- Footer Index --->>> */
+.Footer{
+    background-color: #424242;
 
+}
 
 /* <<<--- Productos Categorias --->>> */
 .Content{
@@ -573,4 +599,44 @@ body {
 }
 .Content-Right{
     overflow: hidden;
+    flex: 1 1 0%;
+    min-width: 1px;
+    padding: 20px 40px;
+}
+.Categorias-Title{
+    font-size: 1.5em;
+    text-align: left;
+}
+.Card-Product{
+    display: flex;
+    width: 100%;
+}
+.Card-Product-Item{
+    width: 270px;
+    margin: 20px;
+    vertical-align: top;
+    list-style: none;
+    white-space: normal;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+.Card-Product-Link{
+    background: #FFF none repeat scroll 0% 0%;
+    color: #353535;
+    display: block;
+    font-size: small;
+    overflow: hidden;
+    text-decoration: none;
+
+}
+.Card-Product-Link:hover{
+    text-decoration: none;
+    opacity: 0.5;
+}
+.Productos-Card-img img{
+    width: 100%;
+    opacity: 1;
+}
+.Productos-Card-info{
+    padding: 10px 20px;
+    background-color: #ccc;
 }
