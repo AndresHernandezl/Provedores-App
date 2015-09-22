@@ -11,8 +11,11 @@ var routes = require('./routes/index');
 //var users = require('./routes/users');
 //var product = require('./routes/product');
 
-var app = express();
+// conecto a la base de datos
+var db = require('./database/database.js');
+db.connect();
 
+var app = express();
 
 
 // view engine setup

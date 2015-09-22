@@ -7,12 +7,12 @@ var bcrypt = require('bcrypt');
 
 // creo esquema del modelo usuarios
 var UserSchema = new Schema({
-	nombre: String,
+	name: String,
 	email: String,
-	sobremi: String,
-	telefono: Number,
+	about: String,
+	phone: Number,
 	adress: String,
-	foto: String,
+	photo: String,
 	usuario: { type: String, required: true, index: { unique: true } },
 	password: String
 });
