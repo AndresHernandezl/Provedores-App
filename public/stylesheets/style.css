@@ -610,10 +610,11 @@ body {
 .Card-Product{
     display: flex;
     width: 100%;
+    flex-wrap: wrap;
+    padding: 0;
 }
 .Card-Product-Item{
-    width: 270px;
-    margin: 20px;
+    margin: 15px 18px;
     vertical-align: top;
     list-style: none;
     white-space: normal;

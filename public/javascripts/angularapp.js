@@ -1,8 +1,8 @@
 var app = angular.module('appNecxo' , ['ui.router']);
 app.config(function($stateProvider , $urlRouterProvider){
     $stateProvider.state('home',{
-        url: '/product',
-        templateUrl:'category/home.html',
+        url: '/home',
+        templateUrl: 'view/category/home.html'
     });
 
     $stateProvider.state('category',{
