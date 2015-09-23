@@ -15,7 +15,7 @@ var jwt = require('jwt-simple');
 // function para registro de usuario crea el token
 exports.signup_email = function(req, res){
 
-	// objeto que recibe 
+	// objeto que recibe
 	var user = new User({
 		name: req.body.name,
 		email: req.body.email,
@@ -26,7 +26,7 @@ exports.signup_email = function(req, res){
 		user: req.body.user,
 		password: req.body.password
 	});
-	
+
 	user.save(function(err){
 		if (err) {return res.send({message: 'Error al almacenar los datos'}) }//Si hubo error
 
@@ -48,11 +48,10 @@ exports.login = function(req, res){
 		user.comparePassword(req.body.password, function(err, entra){
 			if (err) throw err;
 			if(!entra){return res.status(401).send({message: "Contraseña incorrecta"})}
-			
+
 			return res
 				.status(200)
 				.send({ userId: user._id, token: service.createToken(user) });
 		});
 	});
 };
-
