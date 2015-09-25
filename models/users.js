@@ -13,7 +13,7 @@ var UserSchema = new Schema({
 	phone: Number,
 	adress: String,
 	photo: String,
-	usuario: { type: String, required: true, index: { unique: true } },
+	username: { type: String, required: true, index: { unique: true } },
 	password: String
 });
 
