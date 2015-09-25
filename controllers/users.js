@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var User = require('../models/users');
 
 //para crear el token uso este service
-var service = require('../token/token');
+var token = require('../token/token');
 var config = require('../config');
 
 var bcrypt = require('bcrypt');
@@ -12,27 +12,36 @@ var path = require('path');
 var qs = require('querystring');
 var jwt = require('jwt-simple');
 
-// function para registro de usuario crea el token
-exports.signup_email = function(req, res){
 
+exports.getUsers = function(req, res){
+	User.find(function(err, users){
+		console.log('Usuarios'+users);
+		if (err) res.send(err);
+		res.json(users);
+	});
+};
+
+
+// function para registro de usuario crea el token
+exports.signup = function(req, res){
+	console.log(req.body);
 	// objeto que recibe
 	var user = new User({
-		name: req.body.name,
+		nombre: req.body.nombre,
 		email: req.body.email,
 		about: req.body.about,
 		phone: req.body.phone,
 		adress: req.body.adress,
 		photo: req.body.photo,
-		username: req.body.user,
+		username: req.body.username,
 		password: req.body.password
 	});
 
 	user.save(function(err){
-		if (err) {return res.send({message: 'Error al almacenar los datos'}) }//Si hubo error
-
+		if (err) {return res.send({message: err}) }//Si hubo error
 		return res // si todo esta bien
 			.status(200)
-			.send({userId: user._id, token: service.createToken(user)});
+			.send({userId: user._id, token: token.createToken(user)});
 
 		// AQUÍ ENVÍO MAIL SI EL REGISTRO FUE EXITOSO
 	});
@@ -51,7 +60,7 @@ exports.login = function(req, res){
 
 			return res
 				.status(200)
-				.send({ userId: user._id, token: service.createToken(user) });
+				.send({ userId: user._id, token: token.createToken(user) });
 		});
 	});
 };
