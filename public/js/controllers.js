@@ -16,5 +16,5 @@ app.controller('homeController', ['$scope', '$auth', '$state', function($scope, 
 			// si ha habido errores
 			console.log(response);
 		});
-	};	
+	};
 }]);
