@@ -1,17 +1,16 @@
-var app = angular.module('appNecxo.controllers', ['ui.router', 'satellizer'])
+var app = angular.module('appNecxo.controllers', ['satellizer'])
 
-app.controller('homeController', ['$scope', '$auth', function($scope, $auth){
+app.controller('homeController', ['$scope', '$auth', '$state', function($scope, $auth, $state){
 
 	// funcion para hacer login
 	$scope.login = function(){
-		console.log('Hola');
 		$auth.login({
 			username: $scope.username,
 			password: $scope.password
 		})
 		.then(function(data){
 			console.log(data);
-			// $location.path('/home');
+			$state.go('product');
 		})
 		.catch(function(response){
 			// si ha habido errores
