@@ -18,8 +18,8 @@ router.get('/users', function(req, res, next) {
 
 // USERS
 //router.post('/users', users.add_users); // registrar usuario - POST
-router.post('users/signup', users.signup_email);
-router.post('users/login', users.login);
+router.post('/signup', users.signup_email);
+router.post('/login', users.login);
 
 
 module.exports = router;

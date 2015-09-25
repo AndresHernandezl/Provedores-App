@@ -23,7 +23,7 @@ exports.signup_email = function(req, res){
 		phone: req.body.phone,
 		adress: req.body.adress,
 		photo: req.body.photo,
-		user: req.body.user,
+		username: req.body.user,
 		password: req.body.password
 	});
 
@@ -41,7 +41,7 @@ exports.signup_email = function(req, res){
 
 // funcion para el login de usuario
 exports.login = function(req, res){
-	User.findOne({ usuario: req.body.usuario }, function(err, user){
+	User.findOne({ username: req.body.username }, function(err, user){
 		if (err) next(err);
 		if(!user) {return res.status(401).send({message: 'No existe ese usuario'})}
 
