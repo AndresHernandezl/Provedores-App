@@ -1,4 +1,4 @@
-var app = angular.module('appNecxo', ['ui.router','appNecxo.controllers', 'appNecxo.services','ui.router']);
+var app = angular.module('appNecxo', ['ui.router','appNecxo.controllers', 'appNecxo.services']);
 
 app.config(function($stateProvider , $urlRouterProvider){
     // parametros de configuracion
