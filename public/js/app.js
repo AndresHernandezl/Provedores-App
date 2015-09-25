@@ -1,6 +1,6 @@
-var app = angular.module('appNecxo', ['ui.router','appNecxo.controllers', 'appNecxo.services']);
+var app = angular.module('appNecxo', ['ui.router','appNecxo.controllers']);
 
-app.config(function($stateProvider , $urlRouterProvider){
+app.config(function($stateProvider , $urlRouterProvider, $authProvider){
     // parametros de configuracion
 	$authProvider.loginUrl = "/login";
 	$authProvider.signupUrl = "/signup";
@@ -8,12 +8,15 @@ app.config(function($stateProvider , $urlRouterProvider){
 	$authProvider.tokenName = "token";
 	$authProvider.tokenPrefix = "appNecxo";
 
-    $stateProvider.state('home',{
-        url: '/',
+    $stateProvider
+
+    .state('home',{
+        url: '/home',
         templateUrl: 'view/home/index.html',
         controller: 'homeController'
-    });
-	$stateProvider.state('home',{
+    })
+
+	.state('product',{
         url: '/product',
         templateUrl: 'view/category/home.html'
     });
