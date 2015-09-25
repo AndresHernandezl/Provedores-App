@@ -1,4 +1,4 @@
-var app = angular.module('appNecxo', ['appNecxo.controllers', 'appNecxo.services']);
+var app = angular.module('appNecxo', ['ui.router','appNecxo.controllers', 'appNecxo.services']);
 
 app.config(function($stateProvider , $urlRouterProvider){
     // parametros de configuracion
@@ -9,17 +9,14 @@ app.config(function($stateProvider , $urlRouterProvider){
 	$authProvider.tokenPrefix = "appNecxo";
 
     $stateProvider.state('home',{
-        url: '/home',
-        templateUrl: 'view/category/home.html',
+        url: '/',
+        templateUrl: 'view/home/index.html',
         controller: 'homeController'
     });
-
-    $stateProvider.state('category',{
-        url: '/category/{id}',
-        templateUrl:''
+	$stateProvider.state('home',{
+        url: '/product',
+        templateUrl: 'view/category/home.html'
     });
-
-
 
     $urlRouterProvider.otherwise('home');
 });
